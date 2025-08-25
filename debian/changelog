@@ -1,5 +1,179 @@
-template-repository (1.0-1) unstable; urgency=medium
+liblwp-protocol-psgi-perl (0.11-2) unstable; urgency=medium
 
-  * Initial release
+  [ Debian Janitor ]
+  * Bump debhelper from old 12 to 13.
+  * Update standards version to 4.5.1, no changes needed.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Thu, 30 Jun 2022 10:03:17 +0100
+
+liblwp-protocol-psgi-perl (0.11-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+  [ Xavier Guimard ]
+  * Removing myself from uploaders
+
+  [ Debian Janitor ]
+  * build-depend on debhelper-compat (not debhelper)
+  * set upstream metadata fields:
+    Bug-Database Bug-Submit Repository Repository-Browse
+
+  [ Jonas Smedegaard ]
+  * simplify source script copyright-chceck
+  * drop patch adopted upstream
+  * declare compliance with Debian Policy 4.5.0
+  * copyright: extend coverage
+
+ -- Jonas Smedegaard <dr@jones.dk>  Thu, 20 Aug 2020 19:39:43 +0200
+
+liblwp-protocol-psgi-perl (0.10-1) unstable; urgency=medium
+
+  [ upstream ]
+  * New release(s).
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-* headers for switch to salsa.debian.org.
+
+  [ Xavier Guimard ]
+  * Use https protocol in Format and Source URLs.
+  * Use MetaCPAN (not CPAN) as primary Source URL.
+  * Add myself to uploaders
+  * Add spelling errors patch (reported)
+
+  [ Jonas Smedegaard ]
+  * Simplify rules.
+    Stop build-depend on licensecheck cdbs.
+  * Stop build-depend on dh-buildinfo.
+  * Set Rules-Requires-Root: no.
+  * Declare compliance with Debian Policy 4.3.0.
+  * Mark build-dependencies needed only for testsuite as such.
+  * Wrap and sort control file.
+  * Explain PSGI last in long description.
+  * Update copyright info:
+    + Extend coverage of packaging.
+     Fix double-whitespace-delimit copyright holders.
+  * Tighten lintian overrides regarding License-Reference.
+  * Update git-buildpackage config: Filter any .git* file.
+  * Update watch file:
+    + Bump to file format 4.
+    + Rewrite usage comment.
+    + Use substitution strings.
+  * Stop (build-)depend on libguard-perl.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 20 Feb 2019 13:12:42 +0100
+
+liblwp-protocol-psgi-perl (0.08-1) unstable; urgency=medium
+
+  [ upstream ]
+  * New release.
+    + Fix "host" matcher to match when port number is included.
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-Browser URL to use cgit web frontend.
+
+  [ Jonas Smedegaard ]
+  * Modernize git-buildpackage config: Avoid git- prefix.
+  * Update copyright info:
+    + Use License-Grant and License-Reference fields.
+      Thanks to Ben Finney.
+    + Extend copyright of packaging to cover current year.
+  * Add lintian override regarding license in License-Reference field.
+    See bug#786450.
+  * Bump debhelper compatibility level to 9.
+  * Add lintian override regarding debhelper 9.
+  * Declare compliance with Debian Policy 3.9.6.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 25 Oct 2015 00:25:36 +0200
+
+liblwp-protocol-psgi-perl (0.07-1) unstable; urgency=medium
+
+  [ upstream ]
+  * New release.
+    + Update documentation.
+    + Remove some dependencies.
+
+  [ Jonas Smedegaard ]
+  * Bump to standards-version 3.9.5.
+  * Fix use canonical Vcs-Git URL.
+  * Update watch file to use metacpan.org URL, and ignore prereleases.
+  * Update copyright info:
+    + Extend coverage of packaging.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 31 May 2014 01:19:01 +0200
+
+liblwp-protocol-psgi-perl (0.06-2) unstable; urgency=low
+
+  * List upstream issue tracker as preferred contact.
+  * Update Homepage to match upstream hint.
+  * Fix stop (build-)depending on libparent-perl or libtest-simple-perl:
+    Provided by perl(-modules).
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 30 Aug 2013 15:51:54 +0200
+
+liblwp-protocol-psgi-perl (0.06-1) unstable; urgency=low
+
+  [ upstream ]
+  * New release.
+    + Support mounting multiple apps with different hosts.
+    + Fix unnecessary dependency.
+
+  [ Jonas Smedegaard ]
+  * Add README.source emphasizing control.in file as *not* a
+    show-stopper for contributions, referring to wiki page for details.
+  * Add git URL as alternate source.
+  * Stop tracking md5sum of upstream tarball.
+  * Use canonical hostname (anonscm.debian.org) in Vcs-Browser URI.
+  * Bump packaging license to GPL-3+, and extend copyrigt coverage for
+    myself to include recent years.
+  * Drop copyright file Files section for no longer shipped convenience
+    code copy.
+  * Include CDBS snippet perl-build.mk (not perl-makemaker.mk).
+    Build-depend on libmodule-build-tiny-perl.
+    Tighten build-dependency on cdbs to versions supporting
+    Module::Build::Tiny.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 16 Jul 2013 20:55:06 +0200
+
+liblwp-protocol-psgi-perl (0.04-1) unstable; urgency=low
+
+  [ upstream ]
+  * New release.
+    + Added options to allow limiting overrides, so that PSGI apps that
+      uses LWP can safely use them without being affected.
+
+  [ Salvatore Bonaccorso ]
+  * Change Vcs-Git to canonical URI (git://anonscm.debian.org)
+
+  [ Jonas Smedegaard ]
+  * Have git-import-orig suppress upstream .gitignore file.
+  * Bump dephelper compatibility level to 8.
+  * Bump standards-version to 3.9.4.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 03 Mar 2013 17:42:47 +0100
+
+liblwp-protocol-psgi-perl (0.03-1) unstable; urgency=low
+
+  * New upstream release.
+
+  [ gregor herrmann ]
+  * Remove debian/source/local-options: abort-on-upstream-changes and
+    unapply-patches are default in dpkg-source since 1.16.1.
+
+  [ Jonas Smedegaard ]
+  * Update copyright file:
+    + Extend coverage for convenience copy of Module::Install.
+    + Reformat using file format 1.0.
+  * Update package relations:
+    + Relax to build-depend unversioned on cdbs, debhelper and
+      devscripts: Needed versions satisfied in stable, and oldstable no
+      longer supported.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 23 Sep 2012 19:57:05 +0200
+
+liblwp-protocol-psgi-perl (0.02-1) unstable; urgency=low
+
+  * Initial packaging release.
+    Closes: bug#627583.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 22 May 2011 10:24:14 +0200
