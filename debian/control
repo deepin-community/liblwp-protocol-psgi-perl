@@ -1,15 +1,43 @@
-Source: template-repository
-Section: unknown
+Source: liblwp-protocol-psgi-perl
+Section: perl
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Build-Depends:
+ debhelper-compat (= 13),
+ libcrypt-ssleay-perl | libio-socket-ssl-perl <!nocheck>,
+ libmodule-build-tiny-perl,
+ libplack-perl <!nocheck>,
+ libtest-requires-perl <!nocheck>,
+ libwww-perl <!nocheck>,
+ perl,
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders:
+ Jonas Smedegaard <dr@jones.dk>,
+Standards-Version: 4.5.1
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/liblwp-protocol-psgi-perl
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/liblwp-protocol-psgi-perl.git
+Homepage: https://github.com/miyagawa/LWP-Protocol-PSGI
+Testsuite: autopkgtest-pkg-perl
+Rules-Requires-Root: no
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: liblwp-protocol-psgi-perl
+Architecture: all
+Depends:
+ libplack-perl,
+ libwww-perl,
+ ${misc:Depends},
+ ${perl:Depends},
+Suggests:
+ libcrypt-ssleay-perl | libio-socket-ssl-perl,
+Description: override LWP's HTTP/HTTPS backend with your own PSGI application
+ LWP::Protocol::PSGI is a module to hijack *any* code
+ that uses LWP::UserAgent underneath
+ such that any HTTP or HTTPS requests can be routed
+ to your own PSGI application.
+ .
+ Because it works with any code that uses LWP,
+ you can override various WWW::*, Net::* or WebService::* modules
+ such as WWW::Mechanize,
+ without modifying the calling code or its internals.
+ .
+ PSGI is a specification to decouple web server environments
+ from web application framework code.
